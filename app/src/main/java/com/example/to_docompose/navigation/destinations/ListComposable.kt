@@ -1,6 +1,5 @@
 package com.example.to_docompose.navigation.destinations
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
