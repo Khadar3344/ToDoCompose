@@ -7,6 +7,5 @@
 - Coroutines: Executing some code in the background
 - Dagger hilt: Dependency injection
 - Splash API Dependency
-- Accompanist Navigation Animation
 - Room Database
 - DataStore Preferences
