@@ -118,13 +118,15 @@ fun DisplaySnackBar(
                     message = setMessage(action = action, taskTitle = taskTitle),
                     actionLabel = setActionLabel(action = action)
                 )
-                undoDeletedTask(
-                    action = action,
-                    snackBarResult = snackBarResult,
-                    onUndoClicked = onUndoClicked
-                )
+                if (snackBarResult == SnackbarResult.ActionPerformed
+                    && action == Action.DELETE
+                ) {
+                    onUndoClicked(Action.UNDO)
+                } else if(snackBarResult == SnackbarResult.Dismissed || action != Action.DELETE) {
+                    onComplete(Action.NO_ACTION)
+                }
             }
-            onComplete(Action.NO_ACTION)
+
         }
     }
 }
@@ -141,18 +143,6 @@ private fun setActionLabel(action: Action): String {
         "UNDO"
     } else {
         "OK"
-    }
-}
-
-private fun undoDeletedTask(
-    action: Action,
-    snackBarResult: SnackbarResult,
-    onUndoClicked: (Action) -> Unit
-) {
-    if (snackBarResult == SnackbarResult.ActionPerformed
-        && action == Action.DELETE
-    ) {
-        onUndoClicked(Action.UNDO)
     }
 }
 
