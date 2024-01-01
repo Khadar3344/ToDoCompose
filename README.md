@@ -1,4 +1,5 @@
 # To-Do App with Jetpack Compose MVVM - Android Development
+It’s to do list app which user can add, update, delete, search and sort tasks. 
 
 ## Libraries And Tech used
 - Jetpack Compose for UI
